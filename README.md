@@ -1,8 +1,6 @@
 # ITechPSP PHP SDK
 
-[![Build Status](https://travis-ci.org/ITechPSP/paymentpage-sdk-php.svg?branch=master)](https://travis-ci.org/ITechPSP/paymentpage-sdk-php)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/13f0385331642461cba7/test_coverage)](https://codeclimate.com/github/ITechPSP/paymentpage_sdk/test_coverage)
-[![Maintainability](https://api.codeclimate.com/v1/badges/13f0385331642461cba7/maintainability)](https://codeclimate.com/github/ITechPSP/paymentpage_sdk/maintainability)
+[![Build Status](https://travis-ci.com/ITechPSP/paymentpage-sdk-php.svg?branch=main)](https://travis-ci.com/ITechPSP/paymentpage-sdk-php)
 
 This is a set of libraries in the PHP language to ease integration of your service
 with the ITechPSP Payment Page.

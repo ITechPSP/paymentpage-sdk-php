@@ -1,7 +1,8 @@
 {
     "name": "itechpsp/paymentpage-sdk",
-    "description": "ITechPSP SDK",
+    "description": "ITechPSP PHP SDK",
     "type": "library",
+    "license": "MIT",
     "autoload": {
         "psr-4": { "itechpsp\\": "src/" }
     },
