@@ -2,17 +2,21 @@
 
 namespace itechpsp;
 
+use Exception;
+
 /**
  * Payment page URL Builder
  */
 class PaymentPage
 {
+    const PATH_PAYMENT = 'payment';
+
     /**
      * Base URL for payment
      *
      * @var string
      */
-    private $baseUrl = 'https://paymentpage.trxhost.com/payment';
+    private $baseUrl = 'https://paymentpage.trxhost.com/';
 
     /**
      * Signature Handler
@@ -20,6 +24,13 @@ class PaymentPage
      * @var SignatureHandler $signatureHandler
      */
     private $signatureHandler;
+
+    /**
+     * Encryptor
+     *
+     * @var Encryptor $encryptor
+     */
+    private $encryptor;
 
     /**
      * @param SignatureHandler $signatureHandler
@@ -46,15 +57,48 @@ class PaymentPage
     }
 
     /**
+     * @param Encryptor $encryptor
+     * @return $this
+     */
+    public function setEncryptor(Encryptor $encryptor): self
+    {
+        $this->encryptor = $encryptor;
+
+        return $this;
+    }
+
+    /**
      * Get full URL for payment
      *
      * @param Payment $payment
      *
      * @return string
+     * @throws Exception
      */
     public function getUrl(Payment $payment): string
     {
-        return $this->baseUrl . '?'. http_build_query($payment->getParams()) . '&signature=' .
-            urlencode($this->signatureHandler->sign($payment->getParams()));
+        $query = http_build_query($payment->getParams());
+        $signature = urlencode($this->signatureHandler->sign($payment->getParams()));
+        $pathWithQuery = self::PATH_PAYMENT . '?'. $query . '&signature=' . $signature;
+
+        if ($this->encryptor) {
+            $pathWithQuery = $payment->getProjectId() . '/' . $this->encryptor->safeEncrypt($pathWithQuery);
+        }
+
+        return $this->getNormalizedBaseURL() . $pathWithQuery;
+    }
+
+    /**
+     * @return string
+     */
+    private function getNormalizedBaseURL(): string
+    {
+        $regexp = sprintf('/\/%s$/', self::PATH_PAYMENT);
+
+        if (preg_match($regexp, $this->baseUrl)) {
+            $this->baseUrl = preg_replace($regexp, '/', $this->baseUrl);
+        }
+
+        return $this->baseUrl;
     }
 }
