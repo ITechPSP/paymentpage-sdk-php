@@ -1,6 +1,6 @@
 <?php
 
-namespace itechpsp;
+namespace trxhosts;
 
 /**
  * Class ProcessException

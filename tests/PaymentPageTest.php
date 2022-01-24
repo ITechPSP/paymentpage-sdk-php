@@ -1,10 +1,10 @@
 <?php
 
-namespace itechpsp\tests;
+namespace trxhosts\tests;
 
-use itechpsp\PaymentPage;
-use itechpsp\SignatureHandler;
-use itechpsp\Payment;
+use trxhosts\PaymentPage;
+use trxhosts\SignatureHandler;
+use trxhosts\Payment;
 
 class PaymentPageTest extends \PHPUnit\Framework\TestCase
 {

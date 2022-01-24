@@ -1,10 +1,10 @@
 {
-    "name": "itechpsp/paymentpage-sdk",
-    "description": "ITechPSP PHP SDK",
+    "name": "trxhosts/paymentpage-sdk",
+    "description": "TrxHosts PHP SDK",
     "type": "library",
     "license": "MIT",
     "autoload": {
-        "psr-4": { "itechpsp\\": "src/" }
+        "psr-4": { "trxhosts\\": "src/" }
     },
     "require": {
         "ext-openssl": "*"

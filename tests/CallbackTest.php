@@ -1,8 +1,8 @@
 <?php
 
-namespace itechpsp\tests;
+namespace trxhosts\tests;
 
-use itechpsp\Gate;
+use trxhosts\Gate;
 
 class CallbackTest extends \PHPUnit\Framework\TestCase
 {

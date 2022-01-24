@@ -1,9 +1,9 @@
 <?php
 
-namespace itechpsp\tests;
+namespace trxhosts\tests;
 
-use itechpsp\Callback;
-use itechpsp\SignatureHandler;
+use trxhosts\Callback;
+use trxhosts\SignatureHandler;
 
 class CallbackFormatTest extends \PHPUnit\Framework\TestCase
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace itechpsp\tests;
+namespace trxhosts\tests;
 
-use itechpsp\Callback;
-use itechpsp\Gate;
-use itechpsp\Payment;
+use trxhosts\Callback;
+use trxhosts\Gate;
+use trxhosts\Payment;
 
 class GateTest extends \PHPUnit\Framework\TestCase
 {

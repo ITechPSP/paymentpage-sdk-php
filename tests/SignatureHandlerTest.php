@@ -1,8 +1,8 @@
 <?php
 
-namespace itechpsp\tests;
+namespace trxhosts\tests;
 
-use itechpsp\SignatureHandler;
+use trxhosts\SignatureHandler;
 
 class SignatureHandlerTest extends \PHPUnit\Framework\TestCase
 {

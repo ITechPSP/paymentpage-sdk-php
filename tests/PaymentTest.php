@@ -1,8 +1,8 @@
 <?php
 
-namespace itechpsp\tests;
+namespace trxhosts\tests;
 
-use itechpsp\Payment;
+use trxhosts\Payment;
 
 class PaymentTest extends \PHPUnit\Framework\TestCase
 {

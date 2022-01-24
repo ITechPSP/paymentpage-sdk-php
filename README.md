@@ -1,9 +1,9 @@
-# ITechPSP PHP SDK
+# TrxHosts PHP SDK
 
-[![Build Status](https://travis-ci.com/ITechPSP/paymentpage-sdk-php.svg?branch=main)](https://travis-ci.com/ITechPSP/paymentpage-sdk-php)
+[![Build Status](https://travis-ci.com/trxhosts/paymentpage-sdk-php.svg?branch=main)](https://travis-ci.com/trxhosts/paymentpage-sdk-php)
 
 This is a set of libraries in the PHP language to ease integration of your service
-with the ITechPSP Payment Page.
+with the TrxHosts Payment Page.
 
 Please note that for correct SDK operating you must have at least PHP 7.0.  
 
@@ -15,14 +15,14 @@ Please note that for correct SDK operating you must have at least PHP 7.0.
 
 Install with composer
 ```bash
-composer require itechpsp/paymentpage-sdk
+composer require trxhosts/paymentpage-sdk
 ```
 
 ### Get URL for payment
 
 ```php
-$gate = new itechpsp\Gate('secret');
-$payment = new itechpsp\Payment('11', 'some payment id');
+$gate = new trxhosts\Gate('secret');
+$payment = new trxhosts\Payment('11', 'some payment id');
 $payment->setPaymentAmount(1000)->setPaymentCurrency('RUB');
 $url = $gate->getPurchasePaymentPageUrl($payment);
 ``` 
@@ -31,19 +31,19 @@ $url = $gate->getPurchasePaymentPageUrl($payment);
 
 If you want to use another domain for URL you can change it with optional `Gate` constructor parameter:
 ```php
-new itechpsp\Gate('secret', 'https://mydomain.com/payment');
+new trxhosts\Gate('secret', 'https://mydomain.com/payment');
 ```
 or change it with method 
 ```php
 $gate->setPaymentBaseUrl('https://mydomain.com/payment');
 ```
 
-### Handle callback from ITechPSP
+### Handle callback from TrxHosts
 
 You'll need to autoload this code in order to handle notifications:
 
 ```php
-$gate = new itechpsp\Gate('secret');
+$gate = new trxhosts\Gate('secret');
 $callback = $gate->handleCallback($data);
 ```
 
